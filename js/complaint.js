@@ -381,87 +381,34 @@ document.getElementById(
 
 
 
-/* VOICE */
-
-document.getElementById(
-    "voiceBtn"
-).onclick = () => {
-
-    if (
-        !(
-            "webkitSpeechRecognition"
-            in window
-        ) &&
-        !(
-            "SpeechRecognition"
-            in window
-        )
-    ) {
-
-        document.getElementById(
-            "voiceStatus"
-        ).textContent =
-            "Voice recognition is not supported.";
-
-        return;
-
-    }
-
-
-    const Recognition =
-        window.SpeechRecognition ||
-        window.webkitSpeechRecognition;
-
-
-    const recognition =
-        new Recognition();
-
-
-    /* =========================
+/* =========================
    MULTI-LANGUAGE VOICE INPUT
 ========================= */
 
-document.getElementById(
-    "voiceBtn"
-).onclick = () => {
+document.getElementById("voiceBtn").onclick = () => {
 
     const voiceStatus =
-        document.getElementById(
-            "voiceStatus"
-        );
+        document.getElementById("voiceStatus");
 
     const language =
-        document.getElementById(
-            "voiceLanguage"
-        ).value;
+        document.getElementById("voiceLanguage").value;
 
 
-    /*
-        Check browser support
-    */
+    /* Check browser support */
 
     if (
-        !(
-            "webkitSpeechRecognition"
-            in window
-        ) &&
-        !(
-            "SpeechRecognition"
-            in window
-        )
+        !("webkitSpeechRecognition" in window) &&
+        !("SpeechRecognition" in window)
     ) {
 
         voiceStatus.textContent =
-            "Voice recognition is not supported in this browser.";
+            "❌ Voice recognition is not supported in this browser.";
 
         return;
-
     }
 
 
-    /*
-        Create speech recognition
-    */
+    /* Create speech recognition */
 
     const SpeechRecognition =
         window.SpeechRecognition ||
@@ -472,29 +419,21 @@ document.getElementById(
         new SpeechRecognition();
 
 
-    /*
-        Selected language
-    */
+    /* Selected language */
 
-    recognition.lang =
-        language;
+    recognition.lang = language;
 
 
-    /*
-        Recognize only one sentence
-    */
+    /* Settings */
 
-    recognition.continuous =
-        false;
+    recognition.continuous = false;
 
+    recognition.interimResults = false;
 
-    recognition.interimResults =
-        false;
+    recognition.maxAlternatives = 1;
 
 
-    /*
-        Start
-    */
+    /* Start */
 
     recognition.onstart = () => {
 
@@ -504,95 +443,79 @@ document.getElementById(
     };
 
 
-    /*
-        Speech result
-    */
+    /* Speech result */
 
-    recognition.onresult = event => {
+    recognition.onresult = (event) => {
 
         const transcript =
             event.results[0][0].transcript;
 
 
         /*
-            Put recognized speech
-            into complaint box
-        */
+         * IMPORTANT:
+         * Do NOT translate or modify transcript.
+         * Put the speech result directly
+         * into the complaint box.
+         */
 
         description.value =
             transcript;
 
-
-        /*
-            Update character count
-        */
 
         counter.textContent =
             transcript.length;
 
 
         /*
-            Run GrievAI analysis
-        */
+         * Analyze the original text
+         */
 
-        analyze(
-            transcript
-        );
+        analyze(transcript);
 
 
         voiceStatus.textContent =
-            "✅ Speech recognized successfully.";
+            "✅ Speech recognized.";
 
     };
 
 
-    /*
-        Error handling
-    */
+    /* Error */
 
-    recognition.onerror =
-        event => {
+    recognition.onerror = (event) => {
 
-            if (
-                event.error ===
-                "not-allowed"
-            ) {
+        if (event.error === "not-allowed") {
 
-                voiceStatus.textContent =
-                    "❌ Microphone permission denied.";
+            voiceStatus.textContent =
+                "❌ Microphone permission denied.";
 
-            }
+        }
 
-            else if (
-                event.error ===
-                "no-speech"
-            ) {
+        else if (event.error === "no-speech") {
 
-                voiceStatus.textContent =
-                    "⚠ No speech detected. Please try again.";
+            voiceStatus.textContent =
+                "⚠ No speech detected. Try again.";
 
-            }
+        }
 
-            else {
+        else {
 
-                voiceStatus.textContent =
-                    "❌ Voice recognition error: " +
-                    event.error;
+            voiceStatus.textContent =
+                "❌ Voice error: " +
+                event.error;
 
-            }
+        }
 
-        };
+    };
 
 
-    /*
-        Finished
-    */
+    /* End */
 
     recognition.onend = () => {
 
         if (
-            voiceStatus.textContent
-                .includes("Listening")
+            voiceStatus.textContent.includes(
+                "Listening"
+            )
         ) {
 
             voiceStatus.textContent =
@@ -603,56 +526,7 @@ document.getElementById(
     };
 
 
-    /*
-        Start microphone
-    */
-
-    recognition.start();
-
-};
-
-
-    recognition.onstart =
-        () => {
-
-            document.getElementById(
-                "voiceStatus"
-            ).textContent =
-                "Listening...";
-
-        };
-
-
-    recognition.onresult =
-        event => {
-
-            description.value =
-                event
-                    .results[0][0]
-                    .transcript;
-
-
-            counter.textContent =
-                description.value.length;
-
-
-            analyze(
-                description.value
-            );
-
-        };
-
-
-    recognition.onend =
-        () => {
-
-            document.getElementById(
-                "voiceStatus"
-            ).textContent =
-                "Voice captured.";
-
-        };
-
+    /* Start microphone */
 
     recognition.start();
 
