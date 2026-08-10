@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Report Complaint | GrievAI</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<header class="topbar">
+
+    <a class="brand" href="index.html">
+
+        <span class="logo">✦</span>
+
+        <span>
+            <b>GrievAI</b>
+            <small>AI Smart Public Grievance System</small>
+        </span>
+
+    </a>
+
+    <nav>
+        <a href="index.html">⌂ Home</a>
+        <a class="active" href="report.html">✎ Report</a>
+        <a href="track.html">⌕ Track</a>
+        <a href="index.html#about">ⓘ About</a>
+        <a class="login-btn" href="dashboard.html">Admin</a>
+    </nav>
+
+</header>
+
+
+<main class="page">
+
+    <h1>Report a New Complaint</h1>
+
+    <p class="muted">
+        Please provide details about the issue you are facing.
+    </p>
+
+
+    <div class="grid-2">
+
+        <section class="card">
+
+            <label>
+                1. Describe the Issue <em>*</em>
+            </label>
+
+            <textarea
+                id="description"
+                maxlength="500"
+                placeholder="Example: There is a huge pothole near the main road..."
+            ></textarea>
+
+            <div class="char">
+                <span id="counter">0</span>/500
+            </div>
+
+
+            <div class="form-grid">
+
+                <div>
+
+                    <label>
+                        2. Speak Your Complaint
+                    </label>
+
+                    <button
+                        type="button"
+                        class="btn outline"
+                        id="voiceBtn"
+                    >
+                        🎙 Start Recording
+                    </button>
+
+                    <small id="voiceStatus">
+                        Optional voice input
+                    </small>
+
+                </div>
+
+
+                <div>
+
+                    <label>
+                        3. Category
+                    </label>
+
+                    <select id="category">
+
+                        <option value="">
+                            AI will detect automatically
+                        </option>
+
+                        <option>
+                            Road Damage
+                        </option>
+
+                        <option>
+                            Garbage Overflow
+                        </option>
+
+                        <option>
+                            Water Leakage
+                        </option>
+
+                        <option>
+                            Street Light
+                        </option>
+
+                        <option>
+                            Electricity
+                        </option>
+
+                        <option>
+                            Other
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <label>
+                4. Location <em>*</em>
+            </label>
+
+            <div class="location-row">
+
+                <input
+                    id="location"
+                    placeholder="Use current location or enter location"
+                >
+
+                <button
+                    type="button"
+                    class="btn outline"
+                    id="locationBtn"
+                >
+                    📍 Use My Location
+                </button>
+
+            </div>
+
+
+            <label>
+                5. Upload Photo / Video
+            </label>
+
+            <input
+                id="media"
+                type="file"
+                accept="image/*,video/*"
+                multiple
+            >
+
+            <div
+                id="filePreview"
+                class="file-preview"
+            ></div>
+
+
+            <button
+                class="btn primary full"
+                id="submitComplaint"
+            >
+                ➤ Submit Complaint
+            </button>
+
+
+            <p class="privacy">
+                🔒 Your data is used only for resolving the complaint.
+            </p>
+
+        </section>
+
+
+        <aside>
+
+            <div class="card ai-card">
+
+                <h2>
+                    🧠 AI Analysis
+                    <small>(Live Preview)</small>
+                </h2>
+
+
+                <div class="ai-row">
+                    <span>Category</span>
+                    <b id="aiCategory">Detecting...</b>
+                </div>
+
+
+                <div class="ai-row">
+                    <span>Priority</span>
+                    <b id="aiPriority">Detecting...</b>
+                </div>
+
+
+                <div class="ai-row">
+                    <span>Department</span>
+                    <b id="aiDepartment">Detecting...</b>
+                </div>
+
+
+                <div class="ai-row">
+                    <span>Duplicate Check</span>
+                    <b id="aiDuplicate">Checking...</b>
+                </div>
+
+
+                <div class="ai-row">
+                    <span>Confidence</span>
+                    <b id="aiConfidence">--</b>
+                </div>
+
+            </div>
+
+
+            <div class="card guidelines">
+
+                <h2>
+                    🛡 Important Guidelines
+                </h2>
+
+                <p>
+                    ✓ Provide accurate information.
+                </p>
+
+                <p>
+                    ✓ Upload clear evidence when possible.
+                </p>
+
+                <p>
+                    ✓ Avoid duplicate complaints.
+                </p>
+
+                <p>
+                    ✓ Track your complaint using its ID.
+                </p>
+
+            </div>
+
+        </aside>
+
+    </div>
+
+</main>
+
+
+<script src="js/complaint.js"></script>
+
+</body>
+</html>
