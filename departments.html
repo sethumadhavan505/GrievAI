@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>Departments | GrievAI</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+
+<body class="admin-body">
+
+
+<header class="admin-top">
+
+<a
+    class="brand light-brand"
+    href="dashboard.html"
+>
+
+<span class="logo">
+✦
+</span>
+
+<span>
+
+<b>
+GrievAI
+</b>
+
+<small>
+Department & Officer Management
+</small>
+
+</span>
+
+</a>
+
+
+<div class="admin-user">
+👤 Administrator
+</div>
+
+</header>
+
+
+
+<div class="admin-layout">
+
+
+<aside class="sidebar">
+
+<a href="dashboard.html">
+⌂ Dashboard
+</a>
+
+<a>
+▤ All Complaints
+</a>
+
+<a class="side-active">
+🏢 Departments
+</a>
+
+<a>
+👥 Officers
+</a>
+
+<a>
+⚙ Settings
+</a>
+
+</aside>
+
+
+
+<main class="admin-main">
+
+
+<div class="admin-heading">
+
+<div>
+
+<h1>
+Department Management
+</h1>
+
+<p>
+Manage departments, officers and responsibilities.
+</p>
+
+</div>
+
+
+<button
+    class="btn primary"
+    onclick="alert('New department form')"
+>
+＋ Add New Department
+</button>
+
+</div>
+
+
+
+<section class="kpis">
+
+
+<div>
+
+<b>
+12
+</b>
+
+<span>
+Active Departments
+</span>
+
+</div>
+
+
+<div>
+
+<b>
+48
+</b>
+
+<span>
+Active Officers
+</span>
+
+</div>
+
+
+<div>
+
+<b id="dComplaints">
+0
+</b>
+
+<span>
+Active Complaints
+</span>
+
+</div>
+
+
+<div>
+
+<b id="dResolved">
+0
+</b>
+
+<span>
+Resolved
+</span>
+
+</div>
+
+
+</section>
+
+
+
+<section class="card">
+
+<h2>
+Departments Overview
+</h2>
+
+
+<div class="table-wrap">
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>
+Department
+</th>
+
+<th>
+Active Complaints
+</th>
+
+<th>
+In Progress
+</th>
+
+<th>
+Resolved
+</th>
+
+<th>
+Officers
+</th>
+
+<th>
+Action
+</th>
+
+</tr>
+
+</thead>
+
+
+<tbody id="deptTable"></tbody>
+
+</table>
+
+</div>
+
+</section>
+
+
+</main>
+
+</div>
+
+
+<script src="js/app.js"></script>
+
+<script src="js/departments.js"></script>
+
+</body>
+
+</html>
