@@ -77,8 +77,8 @@ Department & Officer Management
 👥 Officers
 </a>
 
-<a>
-⚙ Settings
+<a href="#" id="settingsBtn">
+    ⚙ Settings
 </a>
 
 </aside>
@@ -105,9 +105,9 @@ Manage departments, officers and responsibilities.
 
 <button
     class="btn primary"
-    onclick="alert('New department form')"
+    id="addDepartmentBtn"
 >
-＋ Add New Department
+    ＋ Add New Department
 </button>
 
 </div>
@@ -225,7 +225,141 @@ Action
 
 </section>
 
+<!-- ADD DEPARTMENT MODAL -->
 
+<div
+    class="modal"
+    id="departmentModal"
+>
+
+    <div class="modal-box">
+
+        <button
+            class="modal-close"
+            id="closeDepartmentModal"
+        >
+            ×
+        </button>
+
+        <h2>
+            Add New Department
+        </h2>
+
+        <p class="muted">
+            Enter the department details below.
+        </p>
+
+
+        <label>
+            Department Name
+        </label>
+
+        <input
+            type="text"
+            id="newDepartmentName"
+            placeholder="Example: Public Health"
+        >
+
+
+        <label>
+            Number of Officers
+        </label>
+
+        <input
+            type="number"
+            id="newDepartmentOfficers"
+            placeholder="Example: 5"
+            min="1"
+        >
+
+
+        <label>
+            Department Description
+        </label>
+
+        <textarea
+            id="newDepartmentDescription"
+            placeholder="Enter department responsibilities..."
+        ></textarea>
+
+
+        <button
+            class="btn primary full"
+            id="saveDepartmentBtn"
+        >
+            ✓ Add Department
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- SETTINGS MODAL -->
+
+<div
+    class="modal"
+    id="settingsModal"
+>
+
+    <div class="modal-box">
+
+        <button
+            class="modal-close"
+            id="closeSettingsModal"
+        >
+            ×
+        </button>
+
+        <h2>
+            ⚙ Settings
+        </h2>
+
+        <p class="muted">
+            Customize your GrievAI administration panel.
+        </p>
+
+
+        <div class="setting-row">
+
+            <div>
+
+                <b>
+                    Dark Mode
+                </b>
+
+                <small>
+                    Change the entire GrievAI interface
+                    to dark mode.
+                </small>
+
+            </div>
+
+
+            <label class="switch">
+
+                <input
+                    type="checkbox"
+                    id="darkModeToggle"
+                >
+
+                <span class="slider"></span>
+
+            </label>
+
+        </div>
+
+
+        <div class="setting-info">
+
+            🌙 Dark mode preference is saved
+            automatically.
+
+        </div>
+
+    </div>
+
+</div>
 </main>
 
 </div>
