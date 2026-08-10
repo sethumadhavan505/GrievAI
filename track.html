@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>Track Complaint | GrievAI</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+
+<body>
+
+<header class="topbar">
+
+<a class="brand" href="index.html">
+
+<span class="logo">✦</span>
+
+<span>
+<b>GrievAI</b>
+<small>AI Smart Public Grievance System</small>
+</span>
+
+</a>
+
+
+<nav>
+
+<a href="index.html">
+⌂ Home
+</a>
+
+<a href="report.html">
+✎ Report
+</a>
+
+<a class="active" href="track.html">
+⌕ Track
+</a>
+
+<a href="index.html#about">
+ⓘ About
+</a>
+
+<a class="login-btn" href="dashboard.html">
+Admin
+</a>
+
+</nav>
+
+</header>
+
+
+<main class="page">
+
+
+<div class="card search-card">
+
+<h1>
+Track Your Complaint
+</h1>
+
+<p class="muted">
+Enter your Complaint ID to get the latest updates.
+</p>
+
+
+<div class="search-row">
+
+<input
+    id="trackId"
+    placeholder="e.g. GRV-2026-000001"
+>
+
+
+<button
+    class="btn primary"
+    id="trackBtn"
+>
+Track
+</button>
+
+</div>
+
+
+<small>
+
+Don't know your ID?
+
+<a
+    href="#"
+    onclick="loadLatest()"
+>
+Use latest complaint
+</a>
+
+</small>
+
+</div>
+
+
+<div id="trackResult"></div>
+
+
+</main>
+
+
+<script src="js/app.js"></script>
+
+<script src="js/track.js"></script>
+
+</body>
+
+</html>
