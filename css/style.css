@@ -1152,3 +1152,328 @@ th {
     }
 
 }
+/* =====================================
+   MODALS
+===================================== */
+
+.modal {
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.55);
+
+    display: none;
+
+    align-items: center;
+
+    justify-content: center;
+
+    z-index: 1000;
+
+    padding: 20px;
+}
+
+
+.modal.show {
+    display: flex;
+}
+
+
+.modal-box {
+    width: 100%;
+
+    max-width: 520px;
+
+    background: white;
+
+    border-radius: 18px;
+
+    padding: 30px;
+
+    position: relative;
+
+    box-shadow:
+        0 25px 70px rgba(0,0,0,.25);
+}
+
+
+.modal-box h2 {
+    margin-top: 0;
+}
+
+
+.modal-box label {
+    display: block;
+
+    margin-top: 18px;
+
+    margin-bottom: 7px;
+
+    font-weight: 700;
+}
+
+
+.modal-box input,
+.modal-box textarea {
+    width: 100%;
+
+    padding: 13px;
+
+    border: 1px solid #ccd8d1;
+
+    border-radius: 9px;
+
+    font: inherit;
+}
+
+
+.modal-box textarea {
+    min-height: 100px;
+
+    resize: vertical;
+}
+
+
+.modal-close {
+    position: absolute;
+
+    right: 18px;
+
+    top: 15px;
+
+    border: none;
+
+    background: transparent;
+
+    font-size: 30px;
+
+    cursor: pointer;
+
+    color: #555;
+}
+
+
+.setting-row {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 20px 0;
+
+    border-top: 1px solid #e2e8e4;
+
+    border-bottom: 1px solid #e2e8e4;
+
+    margin-top: 20px;
+}
+
+
+.setting-row small {
+    display: block;
+
+    color: #6b7771;
+
+    margin-top: 5px;
+
+    max-width: 300px;
+}
+
+
+.setting-info {
+    margin-top: 18px;
+
+    padding: 14px;
+
+    border-radius: 9px;
+
+    background: #eff8f2;
+
+    color: #087f3f;
+
+    font-size: 13px;
+}
+
+
+/* =====================================
+   DARK MODE
+===================================== */
+
+body.dark-mode {
+    background: #101716;
+
+    color: #edf5f1;
+}
+
+
+body.dark-mode .admin-top,
+body.dark-mode .card,
+body.dark-mode .modal-box,
+body.dark-mode .kpis > div {
+    background: #182321;
+
+    color: #edf5f1;
+
+    border-color: #30413c;
+}
+
+
+body.dark-mode .admin-top {
+    border-bottom-color: #30413c;
+}
+
+
+body.dark-mode .admin-main {
+    color: #edf5f1;
+}
+
+
+body.dark-mode .muted,
+body.dark-mode .kpis span,
+body.dark-mode .brand small {
+    color: #a9b8b2;
+}
+
+
+body.dark-mode table {
+    color: #edf5f1;
+}
+
+
+body.dark-mode th {
+    color: #a9b8b2;
+}
+
+
+body.dark-mode td {
+    border-bottom-color: #30413c;
+}
+
+
+body.dark-mode .table-head select,
+body.dark-mode .modal-box input,
+body.dark-mode .modal-box textarea {
+    background: #101716;
+
+    color: #edf5f1;
+
+    border-color: #40534c;
+}
+
+
+body.dark-mode .btn.outline {
+    background: #182321;
+
+    color: #72d99a;
+
+    border-color: #36a866;
+}
+
+
+body.dark-mode .date {
+    background: #182321;
+
+    color: #edf5f1;
+
+    border-color: #30413c;
+}
+
+
+body.dark-mode .setting-info {
+    background: #153126;
+
+    color: #7be2a2;
+}
+
+
+body.dark-mode .setting-row {
+    border-color: #30413c;
+}
+
+
+body.dark-mode .modal-close {
+    color: #edf5f1;
+}
+
+
+body.dark-mode .status-pill {
+    background: #173a29;
+
+    color: #7be2a2;
+}
+
+
+/* =====================================
+   DARK MODE - HOME / CITIZEN PAGES
+===================================== */
+
+body.dark-mode .topbar {
+    background: #182321;
+
+    border-color: #30413c;
+}
+
+
+body.dark-mode .topbar nav a {
+    color: #edf5f1;
+}
+
+
+body.dark-mode .topbar nav .active {
+    color: #72d99a;
+
+    border-color: #36a866;
+}
+
+
+body.dark-mode .hero {
+    background:
+        linear-gradient(
+            120deg,
+            #172820,
+            #17242d
+        );
+}
+
+
+body.dark-mode .hero-text,
+body.dark-mode .features p,
+body.dark-mode .muted {
+    color: #a9b8b2;
+}
+
+
+body.dark-mode .features article,
+body.dark-mode .stats {
+    background: #182321;
+
+    border-color: #30413c;
+}
+
+
+body.dark-mode .stats {
+    background: #153126;
+}
+
+
+body.dark-mode .card label {
+    color: #edf5f1;
+}
+
+
+body.dark-mode .card textarea,
+body.dark-mode .card input,
+body.dark-mode .card select {
+    background: #101716;
+
+    color: #edf5f1;
+
+    border-color: #40534c;
+}
+
+
+body.dark-mode footer {
+    color: #a9b8b2;
+}
