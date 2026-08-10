@@ -54,18 +54,14 @@ a {
 
 
 .logo {
-    width: 42px;
-    height: 42px;
+    width: 58px;
+    height: 58px;
 
-    border-radius: 12px;
+    object-fit: contain;
 
-    background: #087f3f;
-    color: white;
+    display: block;
 
-    display: grid;
-    place-items: center;
-
-    font-size: 24px;
+    flex-shrink: 0;
 }
 
 
