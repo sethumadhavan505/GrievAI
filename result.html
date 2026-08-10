@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>AI Analysis Result | GrievAI</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+
+<body>
+
+<header class="topbar">
+
+    <a class="brand" href="index.html">
+
+        <span class="logo">✦</span>
+
+        <span>
+            <b>GrievAI</b>
+            <small>AI Smart Public Grievance System</small>
+        </span>
+
+    </a>
+
+
+    <nav>
+
+        <a href="index.html">⌂ Home</a>
+
+        <a href="report.html">✎ Report</a>
+
+        <a class="active" href="track.html">⌕ Track</a>
+
+        <a href="index.html#about">ⓘ About</a>
+
+        <a class="login-btn" href="dashboard.html">
+            Admin
+        </a>
+
+    </nav>
+
+</header>
+
+
+<main class="page">
+
+    <div class="success card">
+
+        <span class="success-icon">
+            ✓
+        </span>
+
+
+        <div>
+
+            <h1>
+                Complaint Submitted Successfully!
+            </h1>
+
+            <p>
+                Your complaint has been received and
+                analyzed by GrievAI.
+            </p>
+
+        </div>
+
+
+        <div class="complaint-id">
+
+            <small>
+                Complaint ID
+            </small>
+
+            <b id="resultId">
+                GRV-2026-000001
+            </b>
+
+        </div>
+
+    </div>
+
+
+    <div class="grid-2">
+
+        <section class="card">
+
+            <h2>
+                🧠 AI Analysis Result
+            </h2>
+
+
+            <div class="analysis-box">
+
+                <p>
+                    <b>Category</b>
+                    <span id="resultCategory">—</span>
+                </p>
+
+
+                <p>
+                    <b>Priority</b>
+                    <span id="resultPriority">—</span>
+                </p>
+
+
+                <p>
+                    <b>Department</b>
+                    <span id="resultDepartment">—</span>
+                </p>
+
+
+                <p>
+                    <b>Location</b>
+                    <span id="resultLocation">—</span>
+                </p>
+
+
+                <p>
+                    <b>Duplicate Check</b>
+                    <span id="resultDuplicate">—</span>
+                </p>
+
+
+                <p>
+                    <b>Confidence</b>
+                    <span id="resultConfidence">—</span>
+                </p>
+
+            </div>
+
+
+            <div class="next-box">
+
+                <h3>
+                    What's Next?
+                </h3>
+
+                <p>
+                    Your complaint has been automatically
+                    routed to the relevant department.
+                    You can track progress at any time.
+                </p>
+
+            </div>
+
+
+            <a
+                class="btn primary"
+                href="track.html"
+            >
+                ⌕ Track Complaint
+            </a>
+
+
+            <a
+                class="btn outline"
+                href="index.html"
+            >
+                ⌂ Go to Home
+            </a>
+
+        </section>
+
+
+        <aside class="card">
+
+            <h2>
+                Complaint Status
+            </h2>
+
+
+            <div class="timeline">
+
+                <div class="done">
+
+                    <b>
+                        Complaint Submitted
+                    </b>
+
+                    <small>
+                        Received successfully
+                    </small>
+
+                </div>
+
+
+                <div class="done">
+
+                    <b>
+                        AI Analysis Completed
+                    </b>
+
+                    <small>
+                        Category and priority detected
+                    </small>
+
+                </div>
+
+
+                <div class="done">
+
+                    <b>
+                        Assigned to Department
+                    </b>
+
+                    <small>
+                        Automatic smart routing
+                    </small>
+
+                </div>
+
+
+                <div class="current">
+
+                    <b>
+                        Work In Progress
+                    </b>
+
+                    <small>
+                        Waiting for officer action
+                    </small>
+
+                </div>
+
+
+                <div>
+
+                    <b>
+                        Pending Resolution
+                    </b>
+
+                    <small>
+                        You will be notified after resolution
+                    </small>
+
+                </div>
+
+            </div>
+
+        </aside>
+
+    </div>
+
+</main>
+
+
+<script src="js/app.js"></script>
+
+<script>
+    renderResult();
+</script>
+
+</body>
+</html>
