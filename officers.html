@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>GrievAI | Officer Management</title>
+
+    <link
+        rel="icon"
+        type="image/x-icon"
+        href="logo.ico"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+</head>
+
+<body>
+
+<header class="admin-top">
+
+    <a
+        class="brand light-brand"
+        href="dashboard.html"
+    >
+
+        <img
+            src="logo.png"
+            alt="GrievAI Logo"
+            class="logo"
+        >
+
+        <span>
+            <b>GrievAI</b>
+            <small>Department & Officer Management</small>
+        </span>
+
+    </a>
+
+    <span>
+        👤 Administrator
+    </span>
+
+</header>
+
+
+<div class="admin-layout">
+
+    <aside class="admin-sidebar">
+
+        <a href="dashboard.html">
+            ⌂ Dashboard
+        </a>
+
+        <a href="departments.html">
+            🏢 Departments
+        </a>
+
+        <a class="active" href="officers.html">
+            👥 Officers
+        </a>
+
+        <a href="#" id="settingsBtn">
+            ⚙ Settings
+        </a>
+
+    </aside>
+
+
+    <main class="admin-main">
+
+        <div class="page-title">
+
+            <div>
+
+                <h1>
+                    Officer Management
+                </h1>
+
+                <p>
+                    Manage officers and their department assignments.
+                </p>
+
+            </div>
+
+            <button
+                class="btn primary"
+                id="addOfficerBtn"
+            >
+                ＋ Add New Officer
+            </button>
+
+        </div>
+
+
+        <section class="kpis">
+
+            <div>
+                <b id="totalOfficers">
+                    0
+                </b>
+
+                <span>
+                    Total Officers
+                </span>
+            </div>
+
+            <div>
+                <b id="activeOfficers">
+                    0
+                </b>
+
+                <span>
+                    Active Officers
+                </span>
+            </div>
+
+            <div>
+                <b id="assignedOfficers">
+                    0
+                </b>
+
+                <span>
+                    Assigned Officers
+                </span>
+            </div>
+
+            <div>
+                <b id="availableOfficers">
+                    0
+                </b>
+
+                <span>
+                    Available Officers
+                </span>
+            </div>
+
+        </section>
+
+
+        <section class="card">
+
+            <h2>
+                Officers Overview
+            </h2>
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>
+                            Officer
+                        </th>
+
+                        <th>
+                            Department
+                        </th>
+
+                        <th>
+                            Phone
+                        </th>
+
+                        <th>
+                            Status
+                        </th>
+
+                        <th>
+                            Action
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody id="officerTable">
+
+                </tbody>
+
+            </table>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<!-- ADD OFFICER MODAL -->
+
+<div
+    class="modal"
+    id="officerModal"
+>
+
+    <div class="modal-box">
+
+        <button
+            class="modal-close"
+            id="closeOfficerModal"
+        >
+            ×
+        </button>
+
+        <h2>
+            Add New Officer
+        </h2>
+
+        <label>
+            Officer Name
+        </label>
+
+        <input
+            id="officerName"
+            type="text"
+            placeholder="Enter officer name"
+        >
+
+
+        <label>
+            Department
+        </label>
+
+        <select id="officerDepartment">
+
+            <option value="">
+                Select Department
+            </option>
+
+        </select>
+
+
+        <label>
+            Phone Number
+        </label>
+
+        <input
+            id="officerPhone"
+            type="tel"
+            placeholder="Enter phone number"
+        >
+
+
+        <button
+            class="btn primary full"
+            id="saveOfficerBtn"
+        >
+            ✓ Add Officer
+        </button>
+
+    </div>
+
+</div>
+
+
+<script src="js/officers.js"></script>
+
+</body>
+
+</html>
