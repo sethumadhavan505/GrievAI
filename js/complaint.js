@@ -417,8 +417,199 @@ document.getElementById(
         new Recognition();
 
 
+    /* =========================
+   MULTI-LANGUAGE VOICE INPUT
+========================= */
+
+document.getElementById(
+    "voiceBtn"
+).onclick = () => {
+
+    const voiceStatus =
+        document.getElementById(
+            "voiceStatus"
+        );
+
+    const language =
+        document.getElementById(
+            "voiceLanguage"
+        ).value;
+
+
+    /*
+        Check browser support
+    */
+
+    if (
+        !(
+            "webkitSpeechRecognition"
+            in window
+        ) &&
+        !(
+            "SpeechRecognition"
+            in window
+        )
+    ) {
+
+        voiceStatus.textContent =
+            "Voice recognition is not supported in this browser.";
+
+        return;
+
+    }
+
+
+    /*
+        Create speech recognition
+    */
+
+    const SpeechRecognition =
+        window.SpeechRecognition ||
+        window.webkitSpeechRecognition;
+
+
+    const recognition =
+        new SpeechRecognition();
+
+
+    /*
+        Selected language
+    */
+
     recognition.lang =
-        "en-IN";
+        language;
+
+
+    /*
+        Recognize only one sentence
+    */
+
+    recognition.continuous =
+        false;
+
+
+    recognition.interimResults =
+        false;
+
+
+    /*
+        Start
+    */
+
+    recognition.onstart = () => {
+
+        voiceStatus.textContent =
+            "🎙 Listening... Please speak now.";
+
+    };
+
+
+    /*
+        Speech result
+    */
+
+    recognition.onresult = event => {
+
+        const transcript =
+            event.results[0][0].transcript;
+
+
+        /*
+            Put recognized speech
+            into complaint box
+        */
+
+        description.value =
+            transcript;
+
+
+        /*
+            Update character count
+        */
+
+        counter.textContent =
+            transcript.length;
+
+
+        /*
+            Run GrievAI analysis
+        */
+
+        analyze(
+            transcript
+        );
+
+
+        voiceStatus.textContent =
+            "✅ Speech recognized successfully.";
+
+    };
+
+
+    /*
+        Error handling
+    */
+
+    recognition.onerror =
+        event => {
+
+            if (
+                event.error ===
+                "not-allowed"
+            ) {
+
+                voiceStatus.textContent =
+                    "❌ Microphone permission denied.";
+
+            }
+
+            else if (
+                event.error ===
+                "no-speech"
+            ) {
+
+                voiceStatus.textContent =
+                    "⚠ No speech detected. Please try again.";
+
+            }
+
+            else {
+
+                voiceStatus.textContent =
+                    "❌ Voice recognition error: " +
+                    event.error;
+
+            }
+
+        };
+
+
+    /*
+        Finished
+    */
+
+    recognition.onend = () => {
+
+        if (
+            voiceStatus.textContent
+                .includes("Listening")
+        ) {
+
+            voiceStatus.textContent =
+                "Voice recording stopped.";
+
+        }
+
+    };
+
+
+    /*
+        Start microphone
+    */
+
+    recognition.start();
+
+};
 
 
     recognition.onstart =
