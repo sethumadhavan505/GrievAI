@@ -67,23 +67,36 @@
 
                 <div>
 
-                    <label>
-                        2. Speak Your Complaint
-                    </label>
+    <label>
+        2. Speak Your Complaint
+    </label>
 
-                    <button
-                        type="button"
-                        class="btn outline"
-                        id="voiceBtn"
-                    >
-                        🎙 Start Recording
-                    </button>
+    <div class="voice-controls">
 
-                    <small id="voiceStatus">
-                        Optional voice input
-                    </small>
+        <select id="voiceLanguage">
+            <option value="ta-IN">தமிழ் (Tamil)</option>
+            <option value="en-IN">English</option>
+            <option value="hi-IN">हिन्दी (Hindi)</option>
+            <option value="te-IN">తెలుగు (Telugu)</option>
+            <option value="ml-IN">മലയാളം (Malayalam)</option>
+            <option value="kn-IN">ಕನ್ನಡ (Kannada)</option>
+        </select>
 
-                </div>
+        <button
+            type="button"
+            class="btn outline"
+            id="voiceBtn"
+        >
+            🎙 Start Recording
+        </button>
+
+    </div>
+
+    <small id="voiceStatus">
+        Select your language and speak your complaint.
+    </small>
+
+</div>
 
 
                 <div>
