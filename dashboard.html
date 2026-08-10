@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>Admin Dashboard | GrievAI</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+
+<body class="admin-body">
+
+
+<header class="admin-top">
+
+<a
+    class="brand light-brand"
+    href="dashboard.html"
+>
+
+<span class="logo">
+✦
+</span>
+
+<span>
+
+<b>
+GrievAI
+</b>
+
+<small>
+Government Admin Console
+</small>
+
+</span>
+
+</a>
+
+
+<div>
+
+<input
+    id="adminSearch"
+    placeholder="Search complaints..."
+>
+
+
+<span class="admin-user">
+👤 Administrator
+</span>
+
+</div>
+
+</header>
+
+
+
+<div class="admin-layout">
+
+
+<aside class="sidebar">
+
+<a class="side-active">
+⌂ Dashboard
+</a>
+
+<a>
+▤ All Complaints
+</a>
+
+<a>
+◷ In Progress
+</a>
+
+<a>
+✓ Resolved
+</a>
+
+<a>
+▥ Analytics & Reports
+</a>
+
+<a>
+🧠 AI Insights
+</a>
+
+<a>
+📍 Heat Map
+</a>
+
+
+<hr>
+
+
+<a href="departments.html">
+🏢 Departments
+</a>
+
+<a>
+👥 Officers
+</a>
+
+<a>
+⚙ Settings
+</a>
+
+
+<div class="system">
+● All Systems Operational
+</div>
+
+</aside>
+
+
+
+<main class="admin-main">
+
+
+<div class="admin-heading">
+
+<div>
+
+<h1>
+Welcome back, Administrator! 👋
+</h1>
+
+<p>
+Here's what's happening in your system today.
+</p>
+
+</div>
+
+
+<span class="date">
+10 Aug 2026
+</span>
+
+</div>
+
+
+
+<section class="kpis">
+
+
+<div>
+
+<b id="kTotal">
+0
+</b>
+
+<span>
+Total Complaints
+</span>
+
+</div>
+
+
+<div>
+
+<b id="kHigh">
+0
+</b>
+
+<span>
+High Priority
+</span>
+
+</div>
+
+
+<div>
+
+<b id="kProgress">
+0
+</b>
+
+<span>
+In Progress
+</span>
+
+</div>
+
+
+<div>
+
+<b id="kResolved">
+0
+</b>
+
+<span>
+Resolved
+</span>
+
+</div>
+
+
+</section>
+
+
+
+<section class="charts">
+
+
+<div class="card chart">
+
+<h2>
+Complaints by Department
+</h2>
+
+
+<div class="bars">
+
+<i style="height:90%">
+Roads 38%
+</i>
+
+<i style="height:68%">
+Sanitation 25%
+</i>
+
+<i style="height:50%">
+Water 18%
+</i>
+
+<i style="height:38%">
+Electricity 12%
+</i>
+
+<i style="height:25%">
+Other 7%
+</i>
+
+</div>
+
+</div>
+
+
+
+<div class="card chart">
+
+<h2>
+Priority Distribution
+</h2>
+
+
+<div class="priority-legend">
+
+<span>
+🔴 High
+</span>
+
+<span>
+🟠 Medium
+</span>
+
+<span>
+🟢 Low
+</span>
+
+</div>
+
+
+<div class="donut">
+AI
+<br>
+DATA
+</div>
+
+</div>
+
+
+
+<div class="card chart">
+
+<h2>
+Quick Actions
+</h2>
+
+
+<button
+    class="btn outline full"
+    onclick="alert('Officer assignment panel opened')"
+>
+👤 Assign Officer
+</button>
+
+
+<button
+    class="btn outline full"
+    onclick="alert('Report exported')"
+>
+▣ Export Report
+</button>
+
+
+<button
+    class="btn outline full"
+    onclick="location.href='departments.html'"
+>
+🏢 Departments
+</button>
+
+</div>
+
+
+</section>
+
+
+
+<section class="card">
+
+
+<div class="table-head">
+
+<h2>
+Recent Complaints
+</h2>
+
+
+<select id="statusFilter">
+
+<option value="">
+All Status
+</option>
+
+<option>
+Submitted
+</option>
+
+<option>
+In Progress
+</option>
+
+<option>
+Resolved
+</option>
+
+</select>
+
+</div>
+
+
+<div class="table-wrap">
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>ID</th>
+
+<th>Issue</th>
+
+<th>Location</th>
+
+<th>Department</th>
+
+<th>Priority</th>
+
+<th>Status</th>
+
+<th>Action</th>
+
+</tr>
+
+</thead>
+
+
+<tbody id="complaintTable"></tbody>
+
+</table>
+
+</div>
+
+</section>
+
+
+</main>
+
+</div>
+
+
+<script src="js/app.js"></script>
+
+<script src="js/dashboard.js"></script>
+
+</body>
+
+</html>
