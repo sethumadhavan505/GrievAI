@@ -193,3 +193,124 @@ document.getElementById(
 
 
 renderDashboard();
+
+/* =====================================
+   SETTINGS
+===================================== */
+
+const settingsBtn =
+    document.getElementById("settingsBtn");
+
+const settingsModal =
+    document.getElementById("settingsModal");
+
+const closeSettingsModal =
+    document.getElementById("closeSettingsModal");
+
+const darkModeToggle =
+    document.getElementById("darkModeToggle");
+
+
+/* Open Settings */
+
+if (settingsBtn) {
+
+    settingsBtn.addEventListener(
+        "click",
+        function (event) {
+
+            event.preventDefault();
+
+            settingsModal.classList.add("show");
+
+        }
+    );
+
+}
+
+
+/* Close Settings */
+
+if (closeSettingsModal) {
+
+    closeSettingsModal.addEventListener(
+        "click",
+        function () {
+
+            settingsModal.classList.remove("show");
+
+        }
+    );
+
+}
+
+
+/* Load saved theme */
+
+function loadDashboardTheme() {
+
+    const dark =
+        localStorage.getItem(
+            "grievai_dark_mode"
+        ) === "true";
+
+
+    document.body.classList.toggle(
+        "dark-mode",
+        dark
+    );
+
+
+    document.documentElement.classList.toggle(
+        "dark-mode",
+        dark
+    );
+
+
+    if (darkModeToggle) {
+
+        darkModeToggle.checked = dark;
+
+    }
+
+}
+
+
+loadDashboardTheme();
+
+
+/* Dark Mode Switch */
+
+if (darkModeToggle) {
+
+    darkModeToggle.addEventListener(
+        "change",
+        function () {
+
+            const enabled =
+                darkModeToggle.checked;
+
+
+            localStorage.setItem(
+                "grievai_dark_mode",
+                enabled
+                    ? "true"
+                    : "false"
+            );
+
+
+            document.body.classList.toggle(
+                "dark-mode",
+                enabled
+            );
+
+
+            document.documentElement.classList.toggle(
+                "dark-mode",
+                enabled
+            );
+
+        }
+    );
+
+}
