@@ -1477,3 +1477,216 @@ body.dark-mode .card select {
 body.dark-mode footer {
     color: #a9b8b2;
 }
+
+/* =====================================
+   ADMIN LAYOUT
+===================================== */
+
+.admin-layout {
+    display: flex;
+    min-height: calc(100vh - 78px);
+}
+
+
+/* LEFT SIDEBAR */
+
+.admin-sidebar {
+    width: 258px;
+    min-width: 258px;
+
+    background: #0b302d;
+
+    color: white;
+
+    padding: 24px 14px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 8px;
+
+    box-sizing: border-box;
+}
+
+
+/* SIDEBAR LINKS */
+
+.admin-sidebar a {
+    display: flex;
+
+    align-items: center;
+
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 14px 16px;
+
+    border-radius: 10px;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 17px;
+
+    font-weight: 600;
+
+    transition: 0.2s ease;
+}
+
+
+/* HOVER */
+
+.admin-sidebar a:hover {
+    background: rgba(255, 255, 255, 0.10);
+}
+
+
+/* ACTIVE */
+
+.admin-sidebar a.active {
+    background: #087f3f;
+
+    color: white;
+}
+
+
+/* MAIN CONTENT */
+
+.admin-main {
+    flex: 1;
+
+    min-width: 0;
+
+    padding: 55px 36px;
+
+    background: #f5f8f6;
+
+    box-sizing: border-box;
+}
+
+
+/* =====================================
+   ADMIN HEADER
+===================================== */
+
+.admin-top {
+    height: 78px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 0 28px;
+
+    box-sizing: border-box;
+
+    background: white;
+
+    border-bottom: 1px solid #dce5e1;
+
+    position: relative;
+
+    z-index: 10;
+}
+
+
+/* LOGO */
+
+.admin-top .logo {
+    width: 58px;
+
+    height: 58px;
+
+    object-fit: contain;
+
+    display: block;
+
+    flex-shrink: 0;
+}
+
+
+/* BRAND */
+
+.admin-top .brand {
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    text-decoration: none;
+
+    color: #092235;
+}
+
+
+.admin-top .brand b {
+    display: block;
+
+    font-size: 28px;
+}
+
+
+.admin-top .brand small {
+    display: block;
+
+    margin-top: 2px;
+
+    color: #60736d;
+
+    font-size: 14px;
+}
+
+
+/* =====================================
+   DARK MODE SIDEBAR
+===================================== */
+
+body.dark-mode .admin-sidebar {
+    background: #091f1c;
+}
+
+
+body.dark-mode .admin-sidebar a {
+    color: #f1f7f4;
+}
+
+
+body.dark-mode .admin-sidebar a:hover {
+    background: #173a34;
+}
+
+
+body.dark-mode .admin-sidebar a.active {
+    background: #087f3f;
+}
+
+
+/* =====================================
+   DARK MODE ADMIN LAYOUT
+===================================== */
+
+body.dark-mode .admin-main {
+    background: #0f1715;
+}
+
+
+body.dark-mode .admin-top {
+    background: #17221f;
+
+    border-color: #30413b;
+}
+
+
+body.dark-mode .admin-top .brand {
+    color: white;
+}
+
+
+body.dark-mode .admin-top .brand small {
+    color: #a9b8b2;
+}
