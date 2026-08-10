@@ -1,3 +1,25 @@
+/* =====================================
+   GLOBAL DARK MODE
+===================================== */
+
+function applySavedTheme() {
+
+    const dark =
+        localStorage.getItem(
+            "grievai_dark_mode"
+        ) === "true";
+
+
+    document.body.classList.toggle(
+        "dark-mode",
+        dark
+    );
+
+}
+
+
+applySavedTheme();
+
 const KEY = "grievai_complaints";
 
 
